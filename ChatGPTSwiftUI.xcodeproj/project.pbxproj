@@ -11,6 +11,17 @@
 		472E972B2973394C00639A9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E972A2973394C00639A9F /* ContentView.swift */; };
 		472E972D2973394F00639A9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472E972C2973394F00639A9F /* Assets.xcassets */; };
 		472E97302973394F00639A9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 472E972F2973394F00639A9F /* Preview Assets.xcassets */; };
+		472E973B297339D700639A9F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E973A297339D700639A9F /* WebView.swift */; };
+		472E973D29733A6700639A9F /* ChatGPTWebViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E973C29733A6700639A9F /* ChatGPTWebViewStore.swift */; };
+		472E973F29733AC100639A9F /* WebViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E973E29733AC100639A9F /* WebViewStore.swift */; };
+		472E974129733B0400639A9F /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 472E974029733B0400639A9F /* script.js */; };
+		472E974329733B2100639A9F /* ChatGPTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E974229733B2100639A9F /* ChatGPTAPI.swift */; };
+		472E97462973403F00639A9F /* TapToPresentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E97452973403C00639A9F /* TapToPresentStyle.swift */; };
+		472E97482973405000639A9F /* TapToPushStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E97472973405000639A9F /* TapToPushStyle.swift */; };
+		472E974A2973414900639A9F /* ChatGPTAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E97492973414900639A9F /* ChatGPTAuthView.swift */; };
+		472E974C297348C700639A9F /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E974B297348C700639A9F /* ChatView.swift */; };
+		472E974F2973531F00639A9F /* Translator in Frameworks */ = {isa = PBXBuildFile; productRef = 472E974E2973531F00639A9F /* Translator */; };
+		472E97512973562800639A9F /* GoogleTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E97502973562800639A9F /* GoogleTranslator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +30,17 @@
 		472E972A2973394C00639A9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		472E972C2973394F00639A9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		472E972F2973394F00639A9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		472E973A297339D700639A9F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		472E973C29733A6700639A9F /* ChatGPTWebViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTWebViewStore.swift; sourceTree = "<group>"; };
+		472E973E29733AC100639A9F /* WebViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewStore.swift; sourceTree = "<group>"; };
+		472E974029733B0400639A9F /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		472E974229733B2100639A9F /* ChatGPTAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTAPI.swift; sourceTree = "<group>"; };
+		472E974429733DCB00639A9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		472E97452973403C00639A9F /* TapToPresentStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapToPresentStyle.swift; sourceTree = "<group>"; };
+		472E97472973405000639A9F /* TapToPushStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapToPushStyle.swift; sourceTree = "<group>"; };
+		472E97492973414900639A9F /* ChatGPTAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTAuthView.swift; sourceTree = "<group>"; };
+		472E974B297348C700639A9F /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		472E97502973562800639A9F /* GoogleTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472E974F2973531F00639A9F /* Translator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +74,14 @@
 		472E97272973394C00639A9F /* ChatGPTSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				472E97282973394C00639A9F /* ChatGPTSwiftUIApp.swift */,
+				472E974429733DCB00639A9F /* Info.plist */,
 				472E972A2973394C00639A9F /* ContentView.swift */,
-				472E972C2973394F00639A9F /* Assets.xcassets */,
+				472E974B297348C700639A9F /* ChatView.swift */,
+				472E97492973414900639A9F /* ChatGPTAuthView.swift */,
+				472E9739297339B500639A9F /* ChatGPT */,
+				472E97382973398D00639A9F /* Utilities */,
+				472E97372973397200639A9F /* Root */,
+				472E97362973396300639A9F /* Resources */,
 				472E972E2973394F00639A9F /* Preview Content */,
 			);
 			path = ChatGPTSwiftUI;
@@ -65,6 +93,44 @@
 				472E972F2973394F00639A9F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		472E97362973396300639A9F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				472E972C2973394F00639A9F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		472E97372973397200639A9F /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				472E97282973394C00639A9F /* ChatGPTSwiftUIApp.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		472E97382973398D00639A9F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				472E97472973405000639A9F /* TapToPushStyle.swift */,
+				472E97452973403C00639A9F /* TapToPresentStyle.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		472E9739297339B500639A9F /* ChatGPT */ = {
+			isa = PBXGroup;
+			children = (
+				472E973A297339D700639A9F /* WebView.swift */,
+				472E973C29733A6700639A9F /* ChatGPTWebViewStore.swift */,
+				472E973E29733AC100639A9F /* WebViewStore.swift */,
+				472E974029733B0400639A9F /* script.js */,
+				472E974229733B2100639A9F /* ChatGPTAPI.swift */,
+				472E97502973562800639A9F /* GoogleTranslator.swift */,
+			);
+			path = ChatGPT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +149,9 @@
 			dependencies = (
 			);
 			name = ChatGPTSwiftUI;
+			packageProductDependencies = (
+				472E974E2973531F00639A9F /* Translator */,
+			);
 			productName = ChatGPTSwiftUI;
 			productReference = 472E97252973394C00639A9F /* ChatGPTSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +180,9 @@
 				Base,
 			);
 			mainGroup = 472E971C2973394C00639A9F;
+			packageReferences = (
+				472E974D2973531F00639A9F /* XCRemoteSwiftPackageReference "Translator" */,
+			);
 			productRefGroup = 472E97262973394C00639A9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				472E97302973394F00639A9F /* Preview Assets.xcassets in Resources */,
+				472E974129733B0400639A9F /* script.js in Resources */,
 				472E972D2973394F00639A9F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +210,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472E97482973405000639A9F /* TapToPushStyle.swift in Sources */,
+				472E974329733B2100639A9F /* ChatGPTAPI.swift in Sources */,
+				472E974C297348C700639A9F /* ChatView.swift in Sources */,
+				472E973B297339D700639A9F /* WebView.swift in Sources */,
+				472E974A2973414900639A9F /* ChatGPTAuthView.swift in Sources */,
+				472E97462973403F00639A9F /* TapToPresentStyle.swift in Sources */,
+				472E973D29733A6700639A9F /* ChatGPTWebViewStore.swift in Sources */,
 				472E972B2973394C00639A9F /* ContentView.swift in Sources */,
 				472E97292973394C00639A9F /* ChatGPTSwiftUIApp.swift in Sources */,
+				472E973F29733AC100639A9F /* WebViewStore.swift in Sources */,
+				472E97512973562800639A9F /* GoogleTranslator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +352,7 @@
 				DEVELOPMENT_TEAM = HJ9L53D9PB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChatGPTSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +382,7 @@
 				DEVELOPMENT_TEAM = HJ9L53D9PB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChatGPTSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +423,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		472E974D2973531F00639A9F /* XCRemoteSwiftPackageReference "Translator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonahaung/Translator";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		472E974E2973531F00639A9F /* Translator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 472E974D2973531F00639A9F /* XCRemoteSwiftPackageReference "Translator" */;
+			productName = Translator;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 472E971D2973394C00639A9F /* Project object */;
 }
