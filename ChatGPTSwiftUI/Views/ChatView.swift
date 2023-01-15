@@ -11,20 +11,28 @@ struct ChatView: View {
 
     @EnvironmentObject private var api: ChatGPTAPI
     @State private var text = ""
+    @State private var answers = [Answer]()
 
     var body: some View {
         VStack(spacing: 0) {
             Divider()
-            ScrollView(.vertical) {
-                LazyVStack(alignment: .leading) {
-                    Text(api.string)
-                        .font(Font.myanmarSansPro(20))
+            List {
+                ForEach(answers) { ans in
+                    Section {
+                        Text(ans.question)
+                            .font(Font.myanmarSansPro())
+                            .foregroundStyle(.secondary)
+                        Text(ans.answer)
+                            .font(Font.myanmarSansPro(19))
+                            .textSelection(.enabled)
+                    }
                 }
-                .padding(.horizontal)
-                .padding(.top)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .animation(.default, value: answers)
             .scrollDismissesKeyboard(.interactively)
+            .onChange(of: api.string) {
+                answers.first?.answer = $0
+            }
             Divider()
             VStack {
                 HStack(alignment: .bottom) {
@@ -33,8 +41,10 @@ struct ChatView: View {
                         .padding(5)
                         .font(Font.myanmarSansPro())
                     Button {
+                        let ans = Answer(text)
                         api.send(text)
                         text.removeAll()
+                        self.answers.insert(ans, at: 0)
                     } label: {
                         Image(systemName: "paperplane.fill")
                             .foregroundColor(.white)

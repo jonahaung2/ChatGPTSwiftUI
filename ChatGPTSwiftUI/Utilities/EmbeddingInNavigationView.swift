@@ -8,15 +8,10 @@
 import SwiftUI
 public struct EmbeddingInNavigationViewModifier: ViewModifier {
     let canCancel: Bool
-    @AppStorage(UserDefaultManager.shared.Tint_Color) private var tintColor: TintColor = .blue
-    @AppStorage(UserDefaultManager.shared.Is_Dark_Mode) private var isDarkMode = false
-
     public func body(content: Content) -> some View {
         PickerNavigationView(canCancel: canCancel) {
             content
         }
-        .accentColor(tintColor.color)
-        .colorScheme(isDarkMode ? .dark : .light)
     }
 }
 

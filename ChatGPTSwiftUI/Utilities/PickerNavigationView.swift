@@ -19,11 +19,10 @@ struct PickerNavigationView<Content: View>: View {
                 .navigationBarItems(leading: Leading())
         }
     }
+    @ViewBuilder
     private func Leading() -> some View {
-        Group {
-            if canCancel {
-                CancelButton(dismiss: _dismiss, isProtected: false)
-            }
+        if canCancel {
+            CancelButton(dismiss: _dismiss, isProtected: false)
         }
     }
 }

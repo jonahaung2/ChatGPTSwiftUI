@@ -16,6 +16,9 @@ class ChatGPTAPI: ObservableObject {
     @Published var string = ""
     private var cancellables = Set<AnyCancellable>()
     private let webStore = ChatGPTWebViewStore.shared
+    private var useBurmeseLange: Bool {
+        UserDefaults.standard.bool(forKey: "useBurmeseLange")
+    }
 
     init() {
         webStore
@@ -30,7 +33,7 @@ class ChatGPTAPI: ObservableObject {
     }
 
     func send(_ string: String) {
-        if string.isMyanar {
+        if useBurmeseLange && string.isMyanar {
            GoogleTranslator.shared.translate(string, .burmese, .english) { [weak self] english, _ in
                guard let self else { return }
                DispatchQueue.main.async {
@@ -47,6 +50,10 @@ class ChatGPTAPI: ObservableObject {
     }
 
     func translate(_ text: String) {
+        guard useBurmeseLange else {
+            self.string = text
+            return
+        }
         GoogleTranslator.shared.translate(text, .english, .burmese) {[weak self] string, error in
             guard let self else { return }
             DispatchQueue.main.async {

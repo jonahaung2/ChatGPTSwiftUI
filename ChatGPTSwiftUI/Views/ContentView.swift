@@ -10,37 +10,39 @@ import SwiftUI
 struct ContentView: View {
 
     @StateObject var webViewStore = ChatGPTWebViewStore.shared
-    @State private var showModal: Bool = false
+    @AppStorage("useBurmeseLange") var useBurmeseLange = true
+    @State private var showControls = false
 
     var body: some View {
-        NavigationStack {
-            VStack {
-                ZStack {
-                    WebView(webView: webViewStore.webView)
-                    ChatView()
-                }
-
+        ZStack {
+            WebView(webView: webViewStore.webView)
+            ChatView()
+        }
+        .navigationTitle("Chat GPT (Myanmar)")
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(leading: loginButton, trailing: trailingNavItem)
+        .task(id: showControls) {
+            if !showControls {
+                webViewStore.webView.load(URLRequest(url: URL(string: "https://chat.openai.com/")!))
             }
-            .navigationTitle("Open AI")
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(leading: loginButton)
-            .task(id: showModal, priority: .background) {
-                if !showModal {
-                    webViewStore.webView.load(URLRequest(url: URL(string: "https://chat.openai.com/")!))
-                }
-            }
-            .sheet(isPresented: $showModal) {
-                ChatGPTAuthView()
-            }
+        }
+        .fullScreenCover(isPresented: $showControls) {
+            ChatGPTAuthView()
         }
     }
 
 
     private var loginButton: some View {
         Button {
-            showModal = true
+            self.showControls = true
         } label: {
-            Text("User")
+            Image(systemName: "applelogo")
+        }
+
+    }
+    private var trailingNavItem: some View {
+        Toggle(isOn: $useBurmeseLange) {
+            Text("Burmese")
         }
     }
 }

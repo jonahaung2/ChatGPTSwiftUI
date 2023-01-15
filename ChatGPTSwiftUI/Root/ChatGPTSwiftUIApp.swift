@@ -11,8 +11,10 @@ import SwiftUI
 struct ChatGPTSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(ChatGPTAPI.shared)
+            NavigationStack {
+                ContentView()
+            }
+            .environmentObject(ChatGPTAPI.shared)
         }
     }
 }

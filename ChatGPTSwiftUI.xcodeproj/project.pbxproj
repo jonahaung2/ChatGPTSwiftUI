@@ -23,6 +23,11 @@
 		472E975329738B0E00639A9F /* GoogleTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E975229738B0E00639A9F /* GoogleTranslator.swift */; };
 		472E975529738E1E00639A9F /* MyanmarSansPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472E975429738E1E00639A9F /* MyanmarSansPro.ttf */; };
 		472E975729738F5400639A9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E975629738F5400639A9F /* Extensions.swift */; };
+		472E975B2973ABED00639A9F /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E975A2973ABED00639A9F /* Answer.swift */; };
+		472E975D2973B03200639A9F /* EmbeddingInNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E975C2973B03200639A9F /* EmbeddingInNavigationView.swift */; };
+		472E975F2973B04900639A9F /* PickerNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E975E2973B04900639A9F /* PickerNavigationView.swift */; };
+		472E97612973B08200639A9F /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E97602973B08200639A9F /* CancelButton.swift */; };
+		472E97632973B0C000639A9F /* TapToShowComfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E97622973B0C000639A9F /* TapToShowComfirmationDialog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		472E975229738B0E00639A9F /* GoogleTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslator.swift; sourceTree = "<group>"; };
 		472E975429738E1E00639A9F /* MyanmarSansPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyanmarSansPro.ttf; sourceTree = "<group>"; };
 		472E975629738F5400639A9F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		472E975A2973ABED00639A9F /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		472E975C2973B03200639A9F /* EmbeddingInNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddingInNavigationView.swift; sourceTree = "<group>"; };
+		472E975E2973B04900639A9F /* PickerNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerNavigationView.swift; sourceTree = "<group>"; };
+		472E97602973B08200639A9F /* CancelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
+		472E97622973B0C000639A9F /* TapToShowComfirmationDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapToShowComfirmationDialog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				472E974429733DCB00639A9F /* Info.plist */,
-				472E972A2973394C00639A9F /* ContentView.swift */,
-				472E974B297348C700639A9F /* ChatView.swift */,
-				472E97492973414900639A9F /* ChatGPTAuthView.swift */,
+				472E97592973ABBE00639A9F /* Models */,
+				472E9758297394CD00639A9F /* Views */,
 				472E9739297339B500639A9F /* ChatGPT */,
 				472E97382973398D00639A9F /* Utilities */,
 				472E97372973397200639A9F /* Root */,
@@ -117,6 +126,10 @@
 		472E97382973398D00639A9F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				472E97622973B0C000639A9F /* TapToShowComfirmationDialog.swift */,
+				472E975C2973B03200639A9F /* EmbeddingInNavigationView.swift */,
+				472E975E2973B04900639A9F /* PickerNavigationView.swift */,
+				472E97602973B08200639A9F /* CancelButton.swift */,
 				472E97472973405000639A9F /* TapToPushStyle.swift */,
 				472E97452973403C00639A9F /* TapToPresentStyle.swift */,
 				472E975629738F5400639A9F /* Extensions.swift */,
@@ -135,6 +148,24 @@
 				472E975229738B0E00639A9F /* GoogleTranslator.swift */,
 			);
 			path = ChatGPT;
+			sourceTree = "<group>";
+		};
+		472E9758297394CD00639A9F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				472E972A2973394C00639A9F /* ContentView.swift */,
+				472E974B297348C700639A9F /* ChatView.swift */,
+				472E97492973414900639A9F /* ChatGPTAuthView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		472E97592973ABBE00639A9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				472E975A2973ABED00639A9F /* Answer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,18 +244,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				472E975F2973B04900639A9F /* PickerNavigationView.swift in Sources */,
 				472E97482973405000639A9F /* TapToPushStyle.swift in Sources */,
+				472E97632973B0C000639A9F /* TapToShowComfirmationDialog.swift in Sources */,
 				472E974329733B2100639A9F /* ChatGPTAPI.swift in Sources */,
 				472E974C297348C700639A9F /* ChatView.swift in Sources */,
 				472E973B297339D700639A9F /* WebView.swift in Sources */,
 				472E974A2973414900639A9F /* ChatGPTAuthView.swift in Sources */,
 				472E97462973403F00639A9F /* TapToPresentStyle.swift in Sources */,
 				472E973D29733A6700639A9F /* ChatGPTWebViewStore.swift in Sources */,
+				472E975D2973B03200639A9F /* EmbeddingInNavigationView.swift in Sources */,
+				472E975B2973ABED00639A9F /* Answer.swift in Sources */,
 				472E975729738F5400639A9F /* Extensions.swift in Sources */,
 				472E972B2973394C00639A9F /* ContentView.swift in Sources */,
 				472E97292973394C00639A9F /* ChatGPTSwiftUIApp.swift in Sources */,
 				472E973F29733AC100639A9F /* WebViewStore.swift in Sources */,
 				472E975329738B0E00639A9F /* GoogleTranslator.swift in Sources */,
+				472E97612973B08200639A9F /* CancelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
