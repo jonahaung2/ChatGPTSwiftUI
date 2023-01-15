@@ -20,6 +20,9 @@
 		472E97482973405000639A9F /* TapToPushStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E97472973405000639A9F /* TapToPushStyle.swift */; };
 		472E974A2973414900639A9F /* ChatGPTAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E97492973414900639A9F /* ChatGPTAuthView.swift */; };
 		472E974C297348C700639A9F /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E974B297348C700639A9F /* ChatView.swift */; };
+		472E975329738B0E00639A9F /* GoogleTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E975229738B0E00639A9F /* GoogleTranslator.swift */; };
+		472E975529738E1E00639A9F /* MyanmarSansPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 472E975429738E1E00639A9F /* MyanmarSansPro.ttf */; };
+		472E975729738F5400639A9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472E975629738F5400639A9F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		472E97472973405000639A9F /* TapToPushStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapToPushStyle.swift; sourceTree = "<group>"; };
 		472E97492973414900639A9F /* ChatGPTAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTAuthView.swift; sourceTree = "<group>"; };
 		472E974B297348C700639A9F /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		472E975229738B0E00639A9F /* GoogleTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTranslator.swift; sourceTree = "<group>"; };
+		472E975429738E1E00639A9F /* MyanmarSansPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyanmarSansPro.ttf; sourceTree = "<group>"; };
+		472E975629738F5400639A9F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		472E97362973396300639A9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				472E975429738E1E00639A9F /* MyanmarSansPro.ttf */,
 				472E972C2973394F00639A9F /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -112,6 +119,7 @@
 			children = (
 				472E97472973405000639A9F /* TapToPushStyle.swift */,
 				472E97452973403C00639A9F /* TapToPresentStyle.swift */,
+				472E975629738F5400639A9F /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 				472E973E29733AC100639A9F /* WebViewStore.swift */,
 				472E974029733B0400639A9F /* script.js */,
 				472E974229733B2100639A9F /* ChatGPTAPI.swift */,
+				472E975229738B0E00639A9F /* GoogleTranslator.swift */,
 			);
 			path = ChatGPT;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				472E97302973394F00639A9F /* Preview Assets.xcassets in Resources */,
+				472E975529738E1E00639A9F /* MyanmarSansPro.ttf in Resources */,
 				472E974129733B0400639A9F /* script.js in Resources */,
 				472E972D2973394F00639A9F /* Assets.xcassets in Resources */,
 			);
@@ -210,9 +220,11 @@
 				472E974A2973414900639A9F /* ChatGPTAuthView.swift in Sources */,
 				472E97462973403F00639A9F /* TapToPresentStyle.swift in Sources */,
 				472E973D29733A6700639A9F /* ChatGPTWebViewStore.swift in Sources */,
+				472E975729738F5400639A9F /* Extensions.swift in Sources */,
 				472E972B2973394C00639A9F /* ContentView.swift in Sources */,
 				472E97292973394C00639A9F /* ChatGPTSwiftUIApp.swift in Sources */,
 				472E973F29733AC100639A9F /* WebViewStore.swift in Sources */,
+				472E975329738B0E00639A9F /* GoogleTranslator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

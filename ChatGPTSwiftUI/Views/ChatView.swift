@@ -18,19 +18,20 @@ struct ChatView: View {
             ScrollView(.vertical) {
                 LazyVStack(alignment: .leading) {
                     Text(api.string)
-                        .fontDesign(.serif)
+                        .font(Font.myanmarSansPro(20))
                 }
                 .padding(.horizontal)
                 .padding(.top)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .scrollDismissesKeyboard(.interactively)
-
+            Divider()
             VStack {
                 HStack(alignment: .bottom) {
                     TextField("Type message", text: $text, axis: .vertical)
                         .lineLimit(1...10)
                         .padding(5)
+                        .font(Font.myanmarSansPro())
                     Button {
                         api.send(text)
                         text.removeAll()
@@ -38,14 +39,13 @@ struct ChatView: View {
                         Image(systemName: "paperplane.fill")
                             .foregroundColor(.white)
                             .padding(10)
-                            .background(Color.blue)
+                            .background(text.isEmpty ? Color.secondary : Color.blue)
                             .clipShape(Circle())
                     }
                     .disabled(text.isEmpty)
                 }
-                .padding(8)
+                .padding(10)
             }
-            .background(.bar)
         }
         .background()
     }

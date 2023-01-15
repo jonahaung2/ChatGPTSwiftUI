@@ -12,7 +12,6 @@ struct ContentView: View {
     @StateObject var webViewStore = ChatGPTWebViewStore.shared
     @State private var showModal: Bool = false
 
-
     var body: some View {
         NavigationStack {
             VStack {
@@ -22,7 +21,7 @@ struct ContentView: View {
                 }
 
             }
-            .navigationTitle("Chat GPT")
+            .navigationTitle("Open AI")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: loginButton)
             .task(id: showModal, priority: .background) {
@@ -41,9 +40,7 @@ struct ContentView: View {
         Button {
             showModal = true
         } label: {
-            Text("Login")
+            Text("User")
         }
-
-
     }
 }
