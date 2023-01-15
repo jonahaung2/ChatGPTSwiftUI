@@ -23,7 +23,7 @@ public class GoogleTranslator {
     }
 
     /// API key.
-    private var apiKey = "AIzaSyDjWjB_tQ_yB9fI8VaMsKTlP94Rxx6DTUc"
+    private var apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
     private let session = URLSession(configuration: .default)
 
