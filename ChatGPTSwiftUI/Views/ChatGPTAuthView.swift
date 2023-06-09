@@ -16,7 +16,7 @@ struct ChatGPTAuthView: View {
 
     var body: some View {
         WebView(webView: webViewStore.webView)
-            .task {
+            .onAppear {
                 let request = URLRequest(url: URL(string: "https://chat.openai.com/")!)
                 self.webViewStore.webView.load(request)
             }
@@ -27,6 +27,9 @@ struct ChatGPTAuthView: View {
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     isLoggedIn = self.webViewStore.webView.url?.absoluteString == "https://chat.openai.com/chat"
+                    if isLoggedIn {
+                        dismiss()
+                    }
                 }
             }
             .navigationBarItems(trailing: trailingItem)

@@ -17,6 +17,8 @@ class WebViewStore: ObservableObject {
         }
     }
 
+    private var observers: [NSKeyValueObservation] = []
+
     init() {
         self.webView = WKWebView()
         self.webView.customUserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 16_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.2 Mobile/15E148 Safari/604.1"
@@ -60,8 +62,6 @@ class WebViewStore: ObservableObject {
         }
 #endif
     }
-
-    private var observers: [NSKeyValueObservation] = []
 
     subscript<T>(dynamicMember keyPath: KeyPath<WKWebView, T>) -> T {
         webView[keyPath: keyPath]

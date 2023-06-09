@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @StateObject var webViewStore = ChatGPTWebViewStore.shared
     @AppStorage("useBurmeseLange") var useBurmeseLange = true
     @State private var showControls = false
 
     var body: some View {
         ZStack {
-            WebView(webView: webViewStore.webView)
+            WebView(webView: ChatGPTAPI.shared.webStore.webView)
             ChatView()
         }
         .navigationTitle("Chat GPT (Myanmar)")
@@ -23,7 +22,7 @@ struct ContentView: View {
         .navigationBarItems(leading: loginButton, trailing: trailingNavItem)
         .task(id: showControls) {
             if !showControls {
-                webViewStore.webView.load(URLRequest(url: URL(string: "https://chat.openai.com/")!))
+                ChatGPTAPI.shared.webStore.webView.load(URLRequest(url: URL(string: "https://chat.openai.com/")!))
             }
         }
         .fullScreenCover(isPresented: $showControls) {

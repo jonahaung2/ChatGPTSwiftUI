@@ -14,7 +14,6 @@ struct ChatGPTSwiftUIApp: App {
             NavigationStack {
                 ContentView()
             }
-            .environmentObject(ChatGPTAPI.shared)
         }
     }
 }

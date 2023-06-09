@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import Translator
 
 class ChatGPTAPI: ObservableObject {
 
@@ -15,7 +14,7 @@ class ChatGPTAPI: ObservableObject {
 
     @Published var string = ""
     private var cancellables = Set<AnyCancellable>()
-    private let webStore = ChatGPTWebViewStore.shared
+    let webStore = ChatGPTWebViewStore()
     private var useBurmeseLange: Bool {
         UserDefaults.standard.bool(forKey: "useBurmeseLange")
     }
@@ -23,11 +22,12 @@ class ChatGPTAPI: ObservableObject {
     init() {
         webStore
             .$receivedMsg
-            .removeDuplicates()
             .receive(on: RunLoop.main)
             .sink {[weak self] value in
                 guard let self else { return }
-                self.translate(value)
+                DispatchQueue.main.async {
+                    self.translate(value)
+                }
             }
             .store(in: &cancellables)
     }

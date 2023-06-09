@@ -11,16 +11,14 @@ import WebKit
 @dynamicMemberLookup
 class ChatGPTWebViewStore: NSObject, ObservableObject {
 
-    static let shared: ChatGPTWebViewStore = .init()
-
     @Published var receivedMsg: String = ""
-    @Published var webView: WKWebView {
+    var webView: WKWebView {
         didSet {
             setupObservers()
         }
     }
 
-    override private init() {
+    override init() {
         self.webView = WKWebView()
         super.init()
         let config = WKWebViewConfiguration()
@@ -51,9 +49,12 @@ class ChatGPTWebViewStore: NSObject, ObservableObject {
 
     private func setupObservers() {
         func subscriber<Value>(for keyPath: KeyPath<WKWebView, Value>) -> NSKeyValueObservation {
-            return webView.observe(keyPath, options: [.prior]) { _, change in
-                if change.isPrior {
-                    self.objectWillChange.send()
+            return webView.observe(keyPath, options: [.prior]) { [weak self] _, change in
+                guard let self else { return }
+                DispatchQueue.main.async {
+                    if change.isPrior {
+                        self.objectWillChange.send()
+                    }
                 }
             }
         }
@@ -96,12 +97,13 @@ class ChatGPTWebViewStore: NSObject, ObservableObject {
 
 extension ChatGPTWebViewStore: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "logHandler" {
-            print("LOG: \(message.body)")
-        } else if message.name == "handler" {
-            let msg = message.body as! [String: Any]
-            debugPrint("msg:", msg["text"])
-            receivedMsg = msg["text"] as! String
+        DispatchQueue.main.async {
+            if message.name == "logHandler" {
+                print("LOG: \(message.body)")
+            } else if message.name == "handler" {
+                let msg = message.body as! [String: Any]
+                self.receivedMsg = msg["text"] as! String
+            }
         }
     }
 }

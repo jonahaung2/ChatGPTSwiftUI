@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChatView: View {
 
-    @EnvironmentObject private var api: ChatGPTAPI
+    @StateObject private var api: ChatGPTAPI = .shared
     @State private var text = ""
     @State private var answers = [Answer]()
 
